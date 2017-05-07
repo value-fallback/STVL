@@ -27,5 +27,22 @@ yarn add stvl
 
 ```javascript
 const stvl = require('stvl');
-...
+
+// When a value is not String, it will return fallback value.
+let a = stvl(null, 0); // a = 0
+let b = stvl({}, 'x'); // b = "X"
+
+// When a value is String, it will return that value.
+let c = stvl('A', 1); // c = "A"
+let d = stvl(`B`, [0, 1, 2]); // d = "B"
 ```
+
+## API
+
+### stvl(value, fallbackValue)
+
+#### value
+A main value.
+
+#### fallbackValue
+A fallback value.
